@@ -1,0 +1,9 @@
+[submodule "heritage-connector-vectors"]
+	path = heritage-connector-vectors
+	url = https://github.com/TheScienceMuseum/heritage-connector-vectors.git
+[submodule "thor"]
+	path = thor
+	url = https://github.com/TheScienceMuseum/thor-docker/
+[submodule "thor-cors-proxy"]
+	path = thor-cors-proxy
+	url = https://github.com/TheScienceMuseum/thor-cors-proxy

@@ -1,0 +1,43 @@
+services:
+  fuseki:
+    container_name: fuseki
+    build:
+      context: ./fuseki
+      args:
+        TRIPLES_URL: ${TRIPLES_URL}
+    ports:
+      - '3030:3030'
+  thor:
+      container_name: thor
+      build:
+        context: ./thor
+        # args:
+        #   SPARQL_ENDPOINT: ${SPARQL_ENDPOINT_PROXIED}
+      ports:
+        - '80:80'
+  thor-cors-proxy:
+      container_name: thor-cors-proxy
+      build:
+        context: ./thor-cors-proxy
+      ports:
+        - '8080:8080'
+  apis:
+      container_name: apis
+      build:
+        context: ./heritage-connector-apis
+        args:
+          SPARQL_ENDPOINT: ${SPARQL_ENDPOINT}
+          NEIGHBOURS_API: ${NEIGHBOURS_API}
+      ports: 
+        - '8010:8010'
+  vectors:
+      container_name: vectors
+      build:
+        context: ./heritage-connector-vectors
+        args:
+          ENTITY_EMBEDDING_URL: ${VECTORS_ENTITY_EMBEDDING_URL}
+          ENTITY_MAPPING_URL: ${VECTORS_ENTITY_MAPPING_URL}
+          RELATION_EMBEDDING_URL: ${VECTORS_RELATION_EMBEDDING_URL}
+          RELATION_MAPPING_URL: ${VECTORS_RELATION_MAPPING_URL}
+      ports: 
+        - '8020:8020'
