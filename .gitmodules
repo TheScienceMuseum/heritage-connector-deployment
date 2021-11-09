@@ -7,3 +7,6 @@
 [submodule "thor-cors-proxy"]
 	path = thor-cors-proxy
 	url = https://github.com/TheScienceMuseum/thor-cors-proxy
+[submodule "heritage-connector-apis"]
+	path = heritage-connector-apis
+	url = https://github.com/TheScienceMuseum/heritage-connector-apis
