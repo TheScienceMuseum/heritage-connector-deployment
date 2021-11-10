@@ -11,8 +11,8 @@ services:
       container_name: thor
       build:
         context: ./thor
-        # args:
-        #   SPARQL_ENDPOINT: ${SPARQL_ENDPOINT_PROXIED}
+        args:
+          SPARQL_ENDPOINT: ${SPARQL_ENDPOINT_PROXIED}
       ports:
         - '80:80'
   thor-cors-proxy:
