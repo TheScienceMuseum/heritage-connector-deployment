@@ -28,7 +28,7 @@ services:
         context: ./heritage-connector-apis
         args:
           SPARQL_ENDPOINT: ${SPARQL_ENDPOINT}
-          NEIGHBOURS_API: ${NEIGHBOURS_API}
+          VECTORS_API: ${VECTORS_API}
       ports: 
         - '8010:8010'
   vectors:
