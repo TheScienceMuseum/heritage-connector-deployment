@@ -7,12 +7,13 @@ services:
         TRIPLES_URL: ${TRIPLES_URL}
     ports:
       - '3030:3030'
+    restart: always
   thor:
       container_name: thor
       build:
         context: ./thor
-        # args:
-        #   SPARQL_ENDPOINT: ${SPARQL_ENDPOINT_PROXIED}
+        args:
+          SPARQL_ENDPOINT: ${SPARQL_ENDPOINT_PROXIED}
       ports:
         - '80:80'
   thor-cors-proxy:
@@ -41,3 +42,4 @@ services:
           RELATION_MAPPING_URL: ${VECTORS_RELATION_MAPPING_URL}
       ports: 
         - '8020:8020'
+      restart: always
