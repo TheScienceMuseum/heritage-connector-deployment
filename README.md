@@ -6,13 +6,9 @@ An easy way to deploy everything from Heritage Connector. The following services
 * **thor** - front end for performing SPARQL queries
 * **thor-cors-proxy** - CORS proxy to enable thor to connect to fuseki
 * **heritage-connector-vectors** - an nearest neighbours on knowledge graph embeddings
-* **heritage-connector-apis** - API endpoints to wrap some common SPARQL queries and the nearest neighbours API
+* **heritage-connector-apis** - API endpoints to wrap some common SPARQL queries and the nearest neighbours API. The API documentation is hosted at `<api-endpoint>/docs`.
 
 The application also comes with a frontend, which can be accessed at `<host-name>:8010/view_connections`.
-
-```
-TODO: add link to documentation for API, metadata explorer
-```
 
 ## Prerequisites and Environment Variables
 
@@ -31,9 +27,10 @@ To setup the EC2 machine:
 
 1. Create a machine, choosing *Deep Learning Base AMI (Ubuntu 18.04) Version 44.0* as your Amazon Machine Image. (This is handy because it comes installed with docker and python).
 2. Choose `t3a.large` for the instance type.
-3. Click *next* until you reach the *Configure Security Group* screen.
-4. Open ports 80, 8080, 8020, 3030 and 8010 for the various microservices. Details of which port is served by which microservice can be found in `docker-compose.yml`.
-5. Launch the machine.
+3. Choose 75GB (or larger) for the storage size.
+4. Click *next* until you reach the *Configure Security Group* screen.
+5. Open ports 80, 8080, 8020, 3030 and 8010 for the various microservices. Details of which port is served by which microservice can be found in `docker-compose.yml`.
+6. Launch the machine.
 
 
 ### Setup Steps
