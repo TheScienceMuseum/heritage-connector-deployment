@@ -31,4 +31,4 @@ RUN curl --silent --show-error --output fuseki-server.jar $URL
 
 EXPOSE 3030
 
-ENTRYPOINT [ "/usr/bin/java", "-Xms4g" ,"-Xmx8g", "-XX:-UseGCOverheadLimit", "-XX:+UseParallelGC", "-jar", "fuseki-server.jar", "--loc=/mnt/tdb_db", "/heritage-connector"]
+ENTRYPOINT [ "/usr/bin/java", "-Xms4g" ,"-Xmx8g", "-Dlog4j2.formatMsgNoLookups=true", "-XX:-UseGCOverheadLimit", "-XX:+UseParallelGC", "-jar", "fuseki-server.jar", "--loc=/mnt/tdb_db", "/heritage-connector"]
