@@ -4,7 +4,8 @@
 # java
 FROM java:8-jdk
 
-ARG VERSION=3.16.0
+#ARG VERSION=3.16.0
+ARG VERSION=4.3.0
 
 # data
 ARG TRIPLES_URL
