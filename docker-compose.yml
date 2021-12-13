@@ -1,3 +1,4 @@
+version: "3"
 services:
   fuseki:
     container_name: fuseki
@@ -29,7 +30,7 @@ services:
         args:
           SPARQL_ENDPOINT: ${SPARQL_ENDPOINT}
           VECTORS_API: ${VECTORS_API}
-      ports: 
+      ports:
         - '8010:8010'
   vectors:
       container_name: vectors
@@ -40,6 +41,6 @@ services:
           ENTITY_MAPPING_URL: ${VECTORS_ENTITY_MAPPING_URL}
           RELATION_EMBEDDING_URL: ${VECTORS_RELATION_EMBEDDING_URL}
           RELATION_MAPPING_URL: ${VECTORS_RELATION_MAPPING_URL}
-      ports: 
+      ports:
         - '8020:8020'
       restart: always
